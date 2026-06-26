@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading Risk Calculator</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: white;
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+        h1 { color: #00b4d8; text-align: center; }
+        label { display: block; margin-top: 12px; }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            background: #0f3460;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #00b4d8;
+            color: #1a1a2e;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📈 Trading Risk Calculator</h1>
+
+    <form method="POST" action="/hitung">
+        <label>Modal (USDT):</label>
+        <input type="number" name="modal" placeholder="contoh: 1000">
+
+        <label>Risk %:</label>
+        <input type="number" name="risk" step="0.1" placeholder="contoh: 2">
+
+        <label>Posisi:</label>
+        <select name="posisi">
+            <option value="LONG">LONG</option>
+            <option value="SHORT">SHORT</option>
+        </select>
+
+        <label>Leverage (1-150x):</label>
+        <input type="number" name="leverage" placeholder="contoh: 10">
+
+        <label>Risk Reward Ratio:</label>
+        <input type="number" name="rr" placeholder="contoh: 2">
+
+        <label>Entry Price:</label>
+        <input type="number" name="entry" step="0.01" placeholder="contoh: 50000">
+
+        <label>Stop Loss:</label>
+        <input type="number" name="sl" step="0.01" placeholder="contoh: 48000">
+
+        <button type="submit">⚡ HITUNG RISIKO</button>
+    </form>
+    {% if hasil %}
+    <div style="background:#16213e; padding:20px; border-radius:8px; margin-top:20px;">
+        <h3 style="color:#ffd60a;">📊 Hasil Perhitungan</h3>
+        <p>Risk Amount   : ${{ hasil.risk_amount }}</p>
+        <p>Take Profit   : {{ hasil.take_profit }}</p>
+        <p>Jarak SL      : {{ hasil.jarak_sl }}</p>
+        <p>Size Tanpa LV : {{ hasil.position_size }}</p>
+        <p>Size + LV     : {{ hasil.position_size_leverage }}</p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div style="background:#ff6b6b; padding:15px; border-radius:8px; margin-top:20px;">
+        <p>⚠️ {{ error }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
