@@ -1,6 +1,6 @@
 # 📈 Trading Risk Management Calculator
 
-A terminal-based Python application that helps traders calculate risk management before entering a trade.
+A full-stack Python application that helps traders calculate risk management before entering a trade. Available in **3 versions**: Terminal, Desktop GUI, and Web App.
 
 ---
 
@@ -18,8 +18,19 @@ A terminal-based Python application that helps traders calculate risk management
 
 ---
 
+## 📦 3 Versions Available
+
+| Version | File | How to Run |
+|---------|------|------------|
+| 🖥️ Terminal | `utama.py` | `python utama.py` |
+| 🪟 Desktop GUI | `gui.py` | `python gui.py` |
+| 🌐 Web App | `app.py` | `python app.py` |
+
+---
+
 ## 📸 Preview
 
+### 🖥️ Terminal Version
 ```
 ╔═════════════════════════════════════╗
 ║     RISK MANAGEMENT CALCULATOR      ║
@@ -40,13 +51,28 @@ A terminal-based Python application that helps traders calculate risk management
 ╚═════════════════════════════════════╝
 ```
 
+### 🪟 Desktop GUI Version
+- Dark theme desktop application
+- Built with Tkinter
+- Real-time calculation with button click
+- Save results to history file
+
+### 🌐 Web App Version
+- Dark theme web interface
+- Built with Flask
+- Accessible via browser at `http://localhost:5000`
+
 ---
 
 ## 🛠️ Tech Stack
 
-- **Language:** Python 3.x
-- **Libraries:** `datetime` (built-in)
-- **Interface:** Terminal / Command Line
+| Layer | Technology |
+|-------|-----------|
+| Language | Python 3.x |
+| Desktop GUI | Tkinter |
+| Web Framework | Flask |
+| Frontend | HTML, CSS |
+| Libraries | `datetime`, `tkinter`, `flask` |
 
 ---
 
@@ -55,27 +81,26 @@ A terminal-based Python application that helps traders calculate risk management
 **1. Clone this repository:**
 ```bash
 git clone https://github.com/aryawirawicaksana029-ui/trading-risk-calculator.git
-```
-
-**2. Navigate to the project folder:**
-```bash
 cd trading-risk-calculator
 ```
 
-**3. Run the program:**
+**2. Install dependencies (for Web version):**
 ```bash
-python utama.py
+pip install flask
 ```
 
-**4. Follow the input prompts:**
-```
-- Enter account balance (min $100)
-- Enter risk percentage (1% - 100%)
-- Choose position: LONG or SHORT
-- Enter leverage (1x - 150x)
-- Enter Risk Reward Ratio
-- Enter entry price
-- Enter stop loss price
+**3. Run your preferred version:**
+
+```bash
+# Terminal version
+python utama.py
+
+# Desktop GUI version
+python gui.py
+
+# Web App version
+python app.py
+# Then open http://localhost:5000 in your browser
 ```
 
 ---
@@ -99,7 +124,13 @@ python utama.py
 ```
 trading-risk-calculator/
 │
-├── utama.py              # Main program
+├── utama.py              # Terminal version
+├── gui.py                # Desktop GUI version (Tkinter)
+├── app.py                # Web App version (Flask)
+│
+├── templates/
+│   └── index.html        # Web interface
+│
 ├── history_trading.txt   # Auto-generated trade history
 └── README.md             # Project documentation
 ```
@@ -108,17 +139,27 @@ trading-risk-calculator/
 
 ## 👨‍💻 Author
 
-**Arya Wira Wicaksana**  
-🐍 Python Developer | AI Enthusiast  
-📧 aryawirawicaksana029@gmail.com  
+**Arya Wira Wicaksana**
+🐍 Python Developer | AI Enthusiast
+📧 aryawirawicaksana029@gmail.com
 🔗 [GitHub](https://github.com/aryawirawicaksana029-ui)
 
 ---
 
-## 📌 Future Plans
+## 📌 Changelog
 
-- [ ] GUI Desktop version (Tkinter)
-- [ ] Web App version (Flask)
-- [ ] Mobile App version
+- `v1.0` - Terminal version with full input validation
+- `v2.0` - Added LONG/SHORT, Leverage, Risk Reward Ratio
+- `v3.0` - Added save history & loop calculation
+- `v4.0` - Desktop GUI with Tkinter dark theme
+- `v5.0` - Web App with Flask
+
+---
+
+## 🔮 Future Plans
+
+- [ ] Deploy web app to cloud (Railway/Render)
 - [ ] Multi-currency support
 - [ ] Trading journal integration
+- [ ] User authentication
+- [ ] Chart visualization
