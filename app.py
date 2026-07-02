@@ -6,38 +6,46 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/hitung", methods=["POST"])
-def hitung():
+@app.route("/calculate", methods=["POST"])
+def calculate():
     try:
-        modal = float(request.form["modal"])
-        risk = float(request.form["risk"])
-        posisi = request.form["posisi"]
+        # Mengambil data dari form dan menyesuaikan dengan variabel bahasa Inggris
+        balance = float(request.form["balance"])
+        risk_percent = float(request.form["risk"])
+        position = request.form["position"]
         leverage = int(request.form["leverage"])
         rr = int(request.form["rr"])
         entry = float(request.form["entry"])
-        sl = float(request.form["sl"])
+        stop_loss = float(request.form["sl"])
 
-        risk_amount = modal * (risk / 100)
-        if posisi == "LONG":
-            jarak_sl = entry - sl
-            take_profit = entry + (jarak_sl * rr)
-        elif posisi == "SHORT":
-            jarak_sl = sl - entry
-            take_profit = entry - (jarak_sl * rr)
-        position_size = round(risk_amount / jarak_sl, 2)
+        # Logika kalkulasi (konsisten dengan logika sebelumnya)
+        risk_amount = balance * (risk_percent / 100)
+        
+        if position == "LONG":
+            sl_distance = entry - stop_loss
+            take_profit = entry + (sl_distance * rr)
+        elif position == "SHORT":
+            sl_distance = stop_loss - entry
+            take_profit = entry - (sl_distance * rr)
+        else:
+            raise ValueError("Invalid position type")
+
+        position_size = round(risk_amount / sl_distance, 2)
         position_size_leverage = round(position_size * leverage, 2)
 
-        hasil = {
+        # Mempersiapkan hasil untuk template
+        result = {
             "risk_amount": risk_amount,
             "take_profit": take_profit,
-            "jarak_sl": jarak_sl,
+            "sl_distance": sl_distance,
             "position_size": position_size,
             "position_size_leverage": position_size_leverage
         }
 
-        return render_template("index.html", hasil=hasil)
-    except:
-        return render_template("index.html", error="Input tidak valid!")
+        return render_template("index.html", result=result)
+    except Exception as e:
+        # Mengembalikan error dalam bahasa Inggris
+        return render_template("index.html", error="Invalid input! Please check your fields.")
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=False, host="0.0.0.0", port=5000)

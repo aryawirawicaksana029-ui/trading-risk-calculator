@@ -1,57 +1,57 @@
 
-Tanggal: 2026-06-26 08:22:52.704180
+Date: 2026-07-02 19:00:18.508667
 ╔═════════════════════════════════════╗
 ║     RISK MANAGEMENT CALCULATOR      ║
 ╠═════════════════════════════════════╣
-║  Posisi       : LONG                ║
-║  Modal        : $250.0              ║
+║  Position     : LONG                ║
+║  Balance      : $100.0              ║
 ║  Risk %       : 2.0%                ║
-║  Entry        : 100.0               ║
-║  Stop Loss    : 90.0                ║
-║  Take Profit  : 130.0               ║
-║  RR Ratio     : 1:3                 ║
+║  Entry        : 123.0               ║
+║  Stop Loss    : 120.0               ║
+║  Take Profit  : 129.0               ║
+║  RR Ratio     : 1:2                 ║
 ╠═════════════════════════════════════╣
-║  Risk Amount  : $5.0                ║
-║  Jarak SL     : 10.0                ║
-║  Leverage     : 5x                  ║
-║  Size Tanpa LV: 0.5                 ║
-║  Size + LV    : 2.5                 ║
+║  Risk Amount  : $2.0                ║
+║  SL Distance  : 3.0                 ║
+║  Leverage     : 12x                 ║
+║  Size (No LV) : 0.67                ║
+║  Size (LV)    : 8.04                ║
 ╚═════════════════════════════════════╝
 
-Tanggal: 2026-06-26 13:47:23.306065
+Date: 2026-07-02 19:08:12.253741
 ╔═════════════════════════════════════╗
 ║     RISK MANAGEMENT CALCULATOR      ║
 ╠═════════════════════════════════════╣
-║  Posisi       : SHORT               ║
-║  Modal        : $250.0              ║
-║  Risk %       : 1.0%                ║
-║  Entry        : 560.0               ║
-║  Stop Loss    : 572.0               ║
-║  Take Profit  : 512.0               ║
-║  RR Ratio     : 1:4                 ║
+║  Position     : LONG                ║
+║  Balance      : $100.0              ║
+║  Risk %       : 2.0%                ║
+║  Entry        : 123.0               ║
+║  Stop Loss    : 120.0               ║
+║  Take Profit  : 132.0               ║
+║  RR Ratio     : 1:3                 ║
 ╠═════════════════════════════════════╣
-║  Risk Amount  : $2.5                ║
-║  Jarak SL     : 12.0                ║
-║  Leverage     : 10x                 ║
-║  Size Tanpa LV: 0.20833333333333334 ║
-║  Size + LV    : 2.0833333333333335  ║
+║  Risk Amount  : $2.0                ║
+║  SL Distance  : 3.0                 ║
+║  Leverage     : 12x                 ║
+║  Size (No LV) : 0.67                ║
+║  Size (LV)    : 8.04                ║
 ╚═════════════════════════════════════╝
 
-Tanggal: 2026-06-26 13:50:02.917505
+Date: 2026-07-02 19:29:56.170646
 ╔═════════════════════════════════════╗
 ║     RISK MANAGEMENT CALCULATOR      ║
 ╠═════════════════════════════════════╣
-║  Posisi       : SHORT               ║
-║  Modal        : $250.0              ║
-║  Risk %       : 1.0%                ║
-║  Entry        : 520.0               ║
-║  Stop Loss    : 530.0               ║
-║  Take Profit  : 490.0               ║
+║  Position     : LONG                ║
+║  Balance      : $100.0              ║
+║  Risk %       : 12.0%               ║
+║  Entry        : 123.0               ║
+║  Stop Loss    : 120.0               ║
+║  Take Profit  : 132.0               ║
 ║  RR Ratio     : 1:3                 ║
 ╠═════════════════════════════════════╣
-║  Risk Amount  : $2.5                ║
-║  Jarak SL     : 10.0                ║
-║  Leverage     : 10x                 ║
-║  Size Tanpa LV: 0.25                ║
-║  Size + LV    : 2.5                 ║
+║  Risk Amount  : $12.0               ║
+║  SL Distance  : 3.0                 ║
+║  Leverage     : 12x                 ║
+║  Size (No LV) : 4.0                 ║
+║  Size (LV)    : 48.0                ║
 ╚═════════════════════════════════════╝

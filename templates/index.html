@@ -38,41 +38,42 @@
 <body>
     <h1>📈 Trading Risk Calculator</h1>
 
-    <form method="POST" action="/hitung">
-        <label>Modal (USDT):</label>
-        <input type="number" name="modal" placeholder="contoh: 1000">
+    <form method="POST" action="/calculate">
+        <label>Balance (USDT):</label>
+        <input type="number" name="balance" step="0.01" placeholder="e.g: 1000" required>
 
         <label>Risk %:</label>
-        <input type="number" name="risk" step="0.1" placeholder="contoh: 2">
+        <input type="number" name="risk" step="0.1" placeholder="e.g: 2" required>
 
-        <label>Posisi:</label>
-        <select name="posisi">
+        <label>Position:</label>
+        <select name="position">
             <option value="LONG">LONG</option>
             <option value="SHORT">SHORT</option>
         </select>
 
         <label>Leverage (1-150x):</label>
-        <input type="number" name="leverage" placeholder="contoh: 10">
+        <input type="number" name="leverage" placeholder="e.g: 10" required>
 
         <label>Risk Reward Ratio:</label>
-        <input type="number" name="rr" placeholder="contoh: 2">
+        <input type="number" name="rr" placeholder="e.g: 2" required>
 
         <label>Entry Price:</label>
-        <input type="number" name="entry" step="0.01" placeholder="contoh: 50000">
+        <input type="number" name="entry" step="0.01" placeholder="e.g: 50000" required>
 
         <label>Stop Loss:</label>
-        <input type="number" name="sl" step="0.01" placeholder="contoh: 48000">
+        <input type="number" name="sl" step="0.01" placeholder="e.g: 48000" required>
 
-        <button type="submit">⚡ HITUNG RISIKO</button>
+        <button type="submit">⚡ CALCULATE RISK</button>
     </form>
-    {% if hasil %}
+
+    {% if result %}
     <div style="background:#16213e; padding:20px; border-radius:8px; margin-top:20px;">
-        <h3 style="color:#ffd60a;">📊 Hasil Perhitungan</h3>
-        <p>Risk Amount   : ${{ hasil.risk_amount }}</p>
-        <p>Take Profit   : {{ hasil.take_profit }}</p>
-        <p>Jarak SL      : {{ hasil.jarak_sl }}</p>
-        <p>Size Tanpa LV : {{ hasil.position_size }}</p>
-        <p>Size + LV     : {{ hasil.position_size_leverage }}</p>
+        <h3 style="color:#ffd60a;">📊 Calculation Result</h3>
+        <p>Risk Amount   : ${{ result.risk_amount }}</p>
+        <p>Take Profit   : {{ result.take_profit }}</p>
+        <p>SL Distance   : {{ result.sl_distance }}</p>
+        <p>Size (No LV)  : {{ result.position_size }}</p>
+        <p>Size (+ LV)   : {{ result.position_size_leverage }}</p>
     </div>
     {% endif %}
 
